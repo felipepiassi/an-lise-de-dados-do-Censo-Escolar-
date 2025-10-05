@@ -11,8 +11,8 @@ from sklearn.cluster import KMeans
 # CONFIGURAÇÃO DE CAMINHOS
 # ============================
 
-CSV_PATH = r"C:\Users\User\OneDrive\Documentos\python\CENSO_PYTHON\resultados_censo_escolar_final.csv"
-OUTPUT_DIR = r"C:\Users\User\OneDrive\Documentos\python\CENSO_PYTHON\relatorios"
+CSV_PATH = r"END. TABELA EM CSV "
+OUTPUT_DIR = r"END. RELATORIOS"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 PDF_PATH = os.path.join(OUTPUT_DIR, "relatorio_censo_escolar.pdf")
 
@@ -29,7 +29,7 @@ def carregar_e_limpar_dados():
 
     # PANDAS
     # Renomear colunas para facilitar o acesso
-    df.columns = [
+    df.columns = [     # altere os dados da tabela para fazer outras analises
         'Localizacao', 'Creche_Parcial', 'Creche_Integral', 'Pre_escola_Parcial',
         'Pre_escola_Integral', 'Anos_Iniciais_Parcial', 'Anos_Iniciais_Integral',
         'Anos_Finais_Parcial', 'Anos_Finais_Integral', 'Medio_Parcial',
@@ -37,7 +37,7 @@ def carregar_e_limpar_dados():
     ]
 
     # Remover linhas de subtotais e de locais específicos
-    df = df[~df['Localizacao'].isin(['BRASIL', 'Estadual e Municipal', 'Estadual', 'Municipal', 'Privada'])]
+    df = df[~df['Localizacao'].isin(['BRASIL', 'Estadual e Municipal', 'Estadual', 'Municipal', 'Privada'])]  # altere os dados da tabela para fazer outras analises
     df.dropna(subset=['Localizacao'], inplace=True)
     df = df[df['Localizacao'] != '']
     df.fillna(0, inplace=True)
@@ -54,7 +54,7 @@ def carregar_e_limpar_dados():
 
 # ============================
 # ETAPA 2 - ANÁLISE DE DADOS E MACHINE LEARNING
-# CALCULOS USANDO SO DADOS DA TABELA.
+# CALCULOS USANDO OS DADOS DA TABELA.
 
 def calcular_totais_e_proporcoes(df):
     """
@@ -225,4 +225,5 @@ if __name__ == "__main__":
     bar_path, pie_path = gerar_graficos(df_localizacao, df_clustering)
     
     # Geração do PDF
+
     gerar_pdf(df_localizacao, bar_path, pie_path)
