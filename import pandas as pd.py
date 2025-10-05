@@ -14,7 +14,7 @@ from sklearn.cluster import KMeans
 CSV_PATH = r"END. TABELA EM CSV "
 OUTPUT_DIR = r"END. RELATORIOS"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
-PDF_PATH = os.path.join(OUTPUT_DIR, "relatorio_censo_escolar.pdf")
+PDF_PATH = os.path.join(OUTPUT_DIR, "relatorio_censo_escolar.pdf") #saida em pdf, altere se desejar.
 
 # ============================
 #  PREPARAÇÃO DOS DADOS
@@ -227,3 +227,4 @@ if __name__ == "__main__":
     # Geração do PDF
 
     gerar_pdf(df_localizacao, bar_path, pie_path)
+
