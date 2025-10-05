@@ -1,0 +1,34 @@
+### **requirements**
+pandas>=2.0.0
+    matplotlib>=3.7.0
+    scikit-learn>=1.3.0
+    reportlab>=4.0.0
+    numpy>=1.24.0
+    seaborn>=0.12.0
+    jupyter>=1.0.0
+    ```
+     `📦 Adiciona dependências do projeto`
+
+### **CRIAR PASTAS:**
+11. **Para criar a pasta `dados/`:**
+     - Digite: `dados/tabela.csv`
+    - : `📁 Cria pasta para datasets`
+
+12. **Repita para `relatorios/`:**
+    - **"Add file"** → **"Create new file"**
+    - Digite: `relatorios/`
+    - Commit message: `📁 Cria pasta para relatórios`
+
+### **VERIFICAÇÃO FINAL:**
+13. **Seu repositório deve ter esta aparência:**
+    ```
+    analise-censo-escolar/
+    ├── 📄 README.md
+    ├── 📊 analise_censo.py
+    ├── 📝 requirements.txt
+    ├── 📁 dados/
+    │   └── tabela.csv
+    ├── 📁 relatorios/
+    │   └── arquivoPDF GERADO NO PYTHON
+    ├── 📄 .gitignore
+    └── 📄 LICENSE
